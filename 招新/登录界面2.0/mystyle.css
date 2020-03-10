@@ -1,0 +1,30 @@
+.box_0{
+	
+	background-image: url(bg0.png);
+    text-align: center;
+	margin:0 auto;
+	
+}
+.box_1 {
+width: 400px;
+height: 200px;
+background: white;
+border: 1px;
+position: absolute;
+box-shadow: -4px 4px 10px black  ;
+text-align:justify;
+
+top: 17%;
+left: 40%;
+
+
+}
+#a{
+	border-top: 0px; 
+	border-left: 0px; 
+	border-right: 0px;
+	border-color:#000; 
+	border-width:1px;
+	width: 250px;
+}
+

@@ -1,0 +1,12 @@
+.css
+.box {
+					width:700px;
+					height: 600px;
+					background: lightblue;
+					border: 1px ridge black;
+					margin: 0 auto;
+					box-shadow: -4px 4px 10px pink  ;
+					text-align:justify;
+					text-justify: inter-ideograph;
+					
+				}
