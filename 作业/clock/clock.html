@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>kkkkkkkk</title>
+        <link rel="stylesheet" type="text/css" href="clock.css">
+        <style></style>
+	</head>
+    <body>
+        <p id="date">点击开始显示时间</div>
+        <button onclick="clock()">t</button>
+        <script>
+            function clock(){
+                var d = new Date();
+                var h = d.getHours();    //小时
+                var m = d.getMinutes()   //分钟
+                var s = d.getSeconds();  //秒
+                // Object.prototype.toString.call(m)
+                // if(h < 10)
+                //     h = "0" + h;
+
+                // if(m < 10)
+                // {
+                //     m = toString(d.getMinutes());  
+                //     m = "0".concat(m);
+                // }
+
+                var x  =  h + ":" + m + ":" + s;
+                
+                // document.write(x)
+                
+                
+            }
+            setTimeout("clock()",1000)
+        </script>
+    </body>
+</html>

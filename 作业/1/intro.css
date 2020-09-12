@@ -1,0 +1,55 @@
+.back{
+    height: 90%;
+    width: 100%;
+    z-index: -1;
+}
+
+.grey{
+    margin-top: 140px;
+    /* margin-left: 50px;
+    margin-right: 50px; */
+    margin: middle;
+    left: 10%;
+    right: 10%;
+    background: #ffffff;
+    overflow: hidden;
+    z-index: 9999;
+    position: fixed;
+    padding:5px;
+    text-align: left;
+    width: 80%;
+    height: 300px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    filter:alpha(Opacity=60);
+    -moz-opacity:0.6;
+    opacity: 0.8;
+}
+
+
+.m{
+    height:100%;
+    width: 100%;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.inside_pic{
+    position: fixed;
+    /* margin-top: 35px; */
+    /* margin-bottom: 50px; */
+    margin-right: 50px;
+    width: 200px;
+    height: 200px;
+    vertical-align: middle;
+    /* align-self: center; */
+    left: 70%;
+}
+
+.txt{
+    margin-left: 15%;
+    /* margin-top: 10%; */     
+    /* 为什么松开这个注释会影响图片？？？？？ */
+}
