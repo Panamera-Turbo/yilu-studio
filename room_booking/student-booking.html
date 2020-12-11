@@ -1,0 +1,95 @@
+<!-- 
+模块：活动室申请
+活动室申请模块，即用户预约活动室所要填写的“活动室借用申请表”。可参考图1。
+申请表内容包括：
+【借用人姓名】
+【联系方式】
+【借用用途】
+【是否使用多媒体设备】
+【借用时间】（日期+时间段，1-2节、3-4节、中午、5-6节、7-8节、9-10节）
+【查找活动室】（沙河主楼中134（容量20人）、新村学生活动室（容量30人）
+【申请提交】和【重填】两个提交按钮 
+-->
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <meta charset="utf-8">
+    <title>std</title>
+    <link rel="stylesheet" href="student-booking.css">
+    <script src="student-booking.js"></script>
+</head>
+
+
+<body>
+    <header id="main-header">
+        <nav id="sidenav">
+            <!--左侧导航栏，点击转到相应页面-->
+            <ul id="main-nav">
+                <li class="active">
+                    <a href="#">
+                        <i class="page"></i> page1
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="page"></i> page2
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="page"></i> page3
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="header_logo">
+            <a href="#">Logo</a>
+        </div>
+    </header>
+
+    <!--主体部分-->
+    <section id="content">
+        <p class="promise">
+                填写即代表我同意下列内容：<br>
+                借用方承诺内容为：<br>
+                1）遵守学院学生活动室场所使用管理要求，保持环境整洁，不吸烟、不乱丢杂物、不乱涂或随意张贴宣传物;<br>
+                2）保持整洁有序的活动环境，严禁在室内大声喧哗、吵闹，影响他人;<br>
+                3）爱护室内的各种设备，严禁搭接电线、携带易燃易爆等危险物品入内;<br>
+                4）使用完毕后务必关闭电器开关、锁好门窗，钥匙及时归还管理员.<br>
+        </p>
+
+        <form name="sub" action="">  <!--这里没有对写明php的名字-->
+            <!-- 具体内容如p标签等的class没有写css，后期按照要求随时能改 -->
+            <p class="subName">姓名：<input type="text" class="stdName" name="stuName" placeholder="姓名" required></p>
+            <p class="subID">学号：<input type="number" class="stdID" name="stuID" placeholder="学号" required></p>
+            <p class="subTel">电话：<input type="number" class="stdTel" name="stuTel" placeholder="联系电话" required></p>
+            <p class="subDate">日期：<input type="date" class="stdDate" name="date"></p>
+
+            <p class="subDetail">
+                借用节数： 第<input type="number" class="stdDetail" name="detail1" placeholder="     1~8" required>节 
+                至 第<input type="number" class="stdDetail" name="detail2" placeholder="     1~8" required>节
+            </p>
+
+            <p class="subChoice">是否使用多媒体：
+                <input type="radio" name="useMedia" value="1" required>是&emsp;&nbsp;
+                <input type="radio" name="useMedia" value="0" required>否
+            </p>
+            
+            <p class="subUse">用途：<br>&nbsp;&emsp;<input type="text" class="stdUse" name="use"></p>
+            <p class="subRoom">期望借用的地点：
+                <input type="radio" name="whichRoom" value="1" required>沙河主楼中134（容量20人）&nbsp;
+                <input type="radio" name="whichRoom" value="0" required>新村学生活动室（容量30人）
+            </p>
+            <br>
+            <br>
+            <br>
+            
+            <input class="submit" type="submit" value="提交" onclick="submitNow()">&emsp;&nbsp;
+            <input class="submit" type="reset" value="重新填写">
+        </form>
+    </section>
+</body>
+</html>
+

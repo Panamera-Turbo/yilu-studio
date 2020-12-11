@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue/vue.js"></script>
+</head>
+
+<style>
+    .inner{
+        height: 150px;
+        background-color: darkcyan;
+    }
+</style>
+<body>
+<div id = "app1">
+    <div class = "inner" @click = "divHandler">
+        <input type ="button" value="click" @click.stop="buttonHandler">    <!--注意理解这里的.stop。试着删除看看浏览器F12后的console-->
+        <input type = "button" value="link" @click.prevent="linkHandler">  <!--prevent阻止默认行为-->
+    </div>
+</div>
+<script>
+    var vm = new Vue({
+        el : '#app1',
+        data: {
+
+        },
+        methods: {
+            divHandler(){
+                console.log('这是触发了div事件')
+            },
+
+            buttonHandler(){
+                console.log('这是触发了button事件')
+            },
+
+            linkHandler(){
+                
+            }
+        }
+    })
+</script>
+
+
+</body>
+</html>

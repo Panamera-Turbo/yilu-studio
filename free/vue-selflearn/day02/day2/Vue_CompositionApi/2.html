@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue3.0 -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 使用组件 -->
+        <button-btn></button-btn>
+    </div>
+    <script>
+        const app = Vue.createApp({})
+        // 声明全局组件
+        app.component('button-btn', {
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            template: `<button @click="count++">{{count}}</button>`
+        })
+
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

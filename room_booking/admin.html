@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <meta charset="utf-8">
+    <title>new</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+
+<body>
+    <header id="main-header">
+        <nav id="sidenav">
+            <!--这部分是头像和ID信息，不需要我就注释掉了（位于左上角）-->
+            <!-- <div id="sidenav-header">
+                <div id="profile-picture">
+                    <img src="http://www.gravatar.com/avatar/fa4df8540bab3cb38f7dfa60c6e0522c.png" />
+                </div>
+                <a href="#" id="profile-link">Jesse Couch</a>
+            </div> -->
+
+            <!--这部分是setting，home，message三个按钮，应该没什么用，注释掉了（在logo的左方）-->
+            <!-- <div id="account-actions">
+                <a href="#" data-title="Home"><i class="fa fa-home"></i></a>
+                <a href="#" id="messages" data-title="Messages" data-newmessages="1"><i class="fa fa-inbox"></i></a>
+                <a href="#" data-title="Settings"><i class="fa fa-cog"></i></a>
+            </div> -->
+
+            <!--左侧导航栏，点击转到相应页面-->
+            <ul id="main-nav">
+                <li class="active">
+                    <a href="#">
+                        <i class="page"></i> page1
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="page"></i> page2
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="page"></i> page3
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--搜索栏，在右上角，注释掉了-->
+        <!-- <form id="admin-search">
+            <input type="text" id="search-field" placeholder="Search" />
+            <label for="search-field" id="search-label" title="Search"><i class="fa fa-search"></i></label>
+        </form> -->
+
+        <!--logo(换成UESTC应该比较好。。)-->
+        <div id="header_logo">
+            <a href="#">Logo</a>
+        </div>
+    </header>
+
+    <!--主体部分-->
+        <section id="content">
+            
+            <p class="promise">
+                填写即代表我同意下列内容：<br>
+                借用方承诺内容为：<br>
+                1）遵守学院学生活动室场所使用管理要求，保持环境整洁，不吸烟、不乱丢杂物、不乱涂或随意张贴宣传物;<br>
+                2）保持整洁有序的活动环境，严禁在室内大声喧哗、吵闹，影响他人;<br>
+                3）爱护室内的各种设备，严禁搭接电线、携带易燃易爆等危险物品入内;<br>
+                4）使用完毕后务必关闭电器开关、锁好门窗，钥匙及时归还管理员.<br>
+            </p>
+
+            <form name="subName" action="xxxxxxxx.php">  <!--这里没有对写明php的名字-->
+                <p class="subName">姓名<input type="text" name="subName"></p>
+                <p class="subID">学号<input type="number" name="stuID"></p>
+                <p class="subDate">日期
+                    <input type="number" name="year">年
+                    <input type="number" name="month">月
+                    <input type="number" name="day">日
+                </p>
+                <input class="submitNow" type="submit" value="提交">
+                <input class="resetNow" type="reset" value="重新填写">
+            </form>
+            
+            
+            <p class="txt2">
+                some text
+            </p>
+        </section>
+    <footer></footer>
+</body>
+
+</html>
+

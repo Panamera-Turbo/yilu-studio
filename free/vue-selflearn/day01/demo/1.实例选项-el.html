@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="obody">
+    <div id="app">
+        {{msg}}
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        // 写Vue
+        new Vue({
+            // el 的作用是管理Vue的试图区域
+            el: "#obody",
+            data: {
+                msg: 'hello Tiedan'
+            }
+        })
+    </script>
+</body>
+
+</html>

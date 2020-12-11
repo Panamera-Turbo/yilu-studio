@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue3.0 -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button-btn></button-btn>
+    </div>
+    <script>
+        const { reactive, computed, watch } = Vue
+
+        const app = Vue.createApp({})
+        app.component('button-btn', {
+            // Vue3.0的CompositionAPI入口是setup函数
+            // 入口
+            setup() {
+                // 包装响应式数据
+                const state = reactive({
+                    count: 0,
+                    double: computed(() => state.count * 2)
+                })
+                function increment() {
+                    state.count++
+                }
+                watch(() => {
+                    console.log(state.double)
+                })
+                // 一定要有返回值
+                return {
+                    state,
+                    increment
+                }
+            },
+            template: `<div>{{state.count}}====>{{state.double}}</div><button @click="increment">点击增加</button>`
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

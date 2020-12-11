@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-for="v in json">{{v}}</h1>
+        <h1 v-for="(v,k) in json">{{v}}====={{k}}</h1>
+        <h1 v-for="(v,k,i) in json">{{v}}====={{k}}====={{i}}</h1>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                json: {
+                    name: '张三',
+                    age: 18
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
