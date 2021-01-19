@@ -54,7 +54,7 @@ npm install vue
 
 -   值通常是id选择器(或者是一个dom对象)
 
--   **注意！！！！**不要让el所管理的视图是html或者body!!!!
+-   **注意！** 不要让el所管理的视图是html或者body!!!!
 
 ``` {.js}
 // js
