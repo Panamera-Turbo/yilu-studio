@@ -162,10 +162,12 @@ let vm =new Vue({
 // v-on的简写方法 
 <button @click="fn">按钮</button>
 ```
+
+v-on默认一定绑定了方法，所以调用方法可以不写括号（）
 **箭头函数：**
 [箭头函数 - CSDN](https://blog.csdn.net/qq_32614411/article/details/80897256)
-**事件对象:**(扩展)
 
+**事件对象:**(扩展)
 -   第一种:方法名中采用$event的方式传形参
 -   第二种:**直接写事件名** 默认第一个参数为event事件参数
 
@@ -197,4 +199,3 @@ let vm =new Vue({
 <br>
 <br>
 
-## 事件
