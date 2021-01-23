@@ -145,7 +145,7 @@ let vm =new Vue({
 **使用：**`v-bind:标签="方法名"`
 
 例如：
-```
+``` 
 <a v-bind:href="xxx">some text</a>
 ```
 
@@ -165,7 +165,7 @@ let vm =new Vue({
 
 v-on默认一定绑定了方法，所以调用方法可以不写括号（）
 **箭头函数：**
-[箭头函数 - CSDN](https://blog.csdn.net/qq_32614411/article/details/80897256)
+[箭头函数（from CSDN）](https://blog.csdn.net/qq_32614411/article/details/80897256)
 
 **事件对象:**(扩展)
 -   第一种:方法名中采用$event的方式传形参
@@ -217,20 +217,61 @@ v-on默认一定绑定了方法，所以调用方法可以不写括号（）
 
 ## lesson-8双向数据绑定
 1. 方法1：使用$refs
-2. 方法2：使用v-model来实现
+2. 方法2：使用v-model来实现：
+   **作用:** 表单元素的绑定
+
+    **特点:** **双向数据绑定**
+
+    -   数据发生变化可以更新到界面
+    -   通过界面可以更改数据
+    -   `v-model` 绑定表单元素，会忽略所有表单元素的 `value`、`checked`、`selected` 特性的初始值
+    -   表单元素会将 Vue
+        实例的data中的数据作为数据来源，所以应该在 `data`选项中声明初始值。
+
+    ``` {.html}
+    // 表单中设置value值没用 v-model会忽略
+    <input type="text" v-model="msg"  value="zhang">
+    <p>{{msg}}</p>
+    ```
+    ``` {.js}
+    // 在data中设置msg
+    data: {
+        msg: 'zhangsan'
+    }
+    ``` 
 
 ## lesson-9计算属性
-```
-js里的书写：
-    computed:{
-        funcName:function(){
-            //function;
-        }
+
+**场景:**
+
+-   当表达式过于复杂的情况下可以采用计算属性
+-   对于任何复杂逻辑都可以采用计算属性
+
+``` {.js}
+data: {
+    message: 'hello'
+},
+computed: {
+    reverseMessage: function () {
+        // this指向 vm 实例
+        return this.message.split('').reverse().join('')
     }
-html中的引用：
-例如：<p>result = {{funcName}}  //注意这里不能有括号
+}
+// computed里的函数直接用 不加() 但是必须得return
+<p>{{ message }}</p>
+<p>{{ reversedMessage }}</p>
 ```
-methods中的方法一旦被触发会使得methods中的全部方法都被执行，对性能是一种耗费<br>而计算属性只会在被触发之后仅触发使用到的方法
+
+**计算属性 和 methods方法的区别:**
+
+1.  计算属性不需要调用形式的写法, 而methods方法必须采用 方法()
+    调用的形式
+2.  计算属性依赖data中的数据变化,
+    如果data并没有发生变化,则计算属性则会取缓存的结果,
+3.  methods不论data变化与否 只要调用 都会重新计算
+
+**注意:** 当数据对象中 message发生变化时 计算属性也会重新计算计算=\>
+改变页面视图
 
 > 在耗时较大、搜索较大的方法建议使用计算属性，其他可以继续使用methods
 
@@ -247,3 +288,55 @@ methods中的方法一旦被触发会使得methods中的全部方法都被执行
 
 > 如果需要非常频繁地切换，则使用 `v-show` 较好.
 > 如果在运行时条件很少改变，则使用 `v-if` 较好.
+
+
+## lesson-12：v-for
+#### 指令v-for循环(数组)
+
+-   `v-for` 指令基于一个数组来渲染一个列表
+-   `v-for` 语法 `item in items` 或者 `item of items` 
+-   其中 items 是源数据数组 而 item 则是被迭代的数组元素的别名。
+
+``` {.js}
+ // 第一种用法：
+<ul>
+  <li v-for="item in items">
+    {{ item.name }}
+  </li>
+</ul>
+
+// data中的数组
+data: {
+    items: [
+      { name: '大娃' },
+      { name: '二娃' }
+    ]
+}
+```
+
+``` {.js}
+// 第二种用法: v-for 还支持一个可选的第二个参数，即当前项的索引
+<ul>
+  <li v-for="(item, index) in items">
+     {{ index }} {{ item.name }}
+  </li>
+</ul>
+```
+
+**`注意`**： v-for写的位置 应该是重复的标签上 不是其父级元素上 需要注意
+
+#### 指令v-for循环(对象)
+
+第一种用法:
+
+``` 
+// items 为对象  item为当前遍历属性对象的值
+v-for="item in items"
+```
+
+第二种用法:
+
+``` 
+//item为当前遍历属性对象的值  key为当前属性名 index为当前索引的值
+v-for="(item, key, index) in  items"   
+```
