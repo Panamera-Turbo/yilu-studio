@@ -177,32 +177,37 @@ v-on默认一定绑定了方法，所以调用方法可以不写括号（）
    - dbclick：鼠标双击
    - mousemove：鼠标移动
 2. 键盘事件：
-
+   - keyup：键盘按键被松开
+   - keydown：键盘按键被按下
+   - 例如keyup.alt.enter等表示输入按键被松开后还要按alt和enter才会触发绑定的方法
 ##### 事件修饰符
+常用修饰符：
 - .stop:阻止单击事件冒泡
 - .prevent:提交事件不再重载页面
-- .capture:
-- .self:
-- .once:
+- .capture: 添加事件监听器的时候使用事件捕获形式
+- .self:只当事件在该元素本身（例如不是子元素）时出发回调·················
+- .once:只能触发一次
 
+修饰符的使用：
+- 修饰符可以串联
+- 可以只有修饰符
 #### 指令v-html与v-text
 `v-text`将内容解析为字符串显示。
 `v-html`将内容解析为html格式后显示
 例如
 ```
-    <div id="app">
-        <p v-cloak>{{ msg }}</p>
-        <p v-text="msg"></p>
-        <p v-html="msg"></p>        
-    </div>
-    <script type="text/javascript">
-        var vm = new Vue({
-            el : "#app",
-            data : {
-                msg : "<h1>这是一个h1元素内容</h1>"
-            }
-        });
-    </script>
+<div id="app">
+    <p v-cloak>{{ msg }}</p>
+    <p v-text="msg"></p>
+    <p v-html="msg"></p>        
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            msg : "<h1>这是一个h1元素内容</h1>"
+        }});
+</script>
 ```
 结果为：
 —————————————————————————
@@ -211,3 +216,5 @@ v-on默认一定绑定了方法，所以调用方法可以不写括号（）
 —————————————————————————
 <br>
 <br>
+
+## 双向数据绑定

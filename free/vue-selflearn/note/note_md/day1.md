@@ -326,7 +326,7 @@ Vue的生命周期里边有八个生命周期钩子函数分别是:
 
 -   destroyed（）销毁
 
-`<img src="https://tva1.sinaimg.cn/large/0081Kckwly1gknncqwp6kj30u023z7bm.jpg" style="zoom:25%;" />`{=html}
+<img src="https://tva1.sinaimg.cn/large/0081Kckwly1gknncqwp6kj30u023z7bm.jpg" style="zoom:25%;">
 
 **mounted:**
 
