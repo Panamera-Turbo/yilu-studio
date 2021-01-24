@@ -279,6 +279,7 @@ computed: {
 > 如果不希望有缓存，建议使用methods
 
 ## lesson-10动态绑定css事件
+传给`v-bind: class`一个对象来动态切换css
 
 
 ## lesson-11:v-if和v-show
