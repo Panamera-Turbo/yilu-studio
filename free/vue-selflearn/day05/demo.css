@@ -1,0 +1,7 @@
+#bag{
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    background: url(./image/bag.jpg) center no-repeat;
+    background-size: 100%;
+}
