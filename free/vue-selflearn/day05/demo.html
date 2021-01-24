@@ -6,20 +6,20 @@
         <link rel="stylesheet" type="text/css" href="demo.css">
         <script src="../vue/vue.js"></script>
     </head>
+    <!-- 创造一辆车，不断开火打击车辆，红色代表血条 -->
 <body>
     <div id="app1">
         <!-- 图片 -->
-        <div id="bag">
-
-        </div>
+        <div id="bag" v-bind:class="{burst:ended}"></div>
         <!-- 进度 -->
         <div id="bag_health">
-
+            <div v-bind:style="{width:health + '%'}"></div>
         </div>
+        
         <!-- 控制按钮 -->
         <div id="controller">
-            <button>touch</button>
-            <button>restart</button>
+            <button v-on:click="fire" v-show="!ended">fire</button>
+            <button v-on:click="restart">restart</button>
         </div>
     </div>
     <script src="demo.js"></script>
