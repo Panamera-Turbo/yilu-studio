@@ -293,11 +293,11 @@ computed: {
 ## lesson-12：v-for
 #### 指令v-for循环(数组)
 
--   `v-for` 指令基于一个数组来渲染一个列表
--   `v-for` 语法 `item in items` 或者 `item of items` 
--   其中 items 是源数据数组 而 item 则是被迭代的数组元素的别名。
+- `v-for` 指令基于一个数组来渲染一个列表
+- `v-for` 语法 `item in items` 或者 `item of items` 
+- 其中 items 是源数据数组 而 item 则是被迭代的数组元素的别名。
 
-1. 第一种用法：
+1. 用法一：
     ``` {.js}
     <ul>
         <li v-for="item in items">
@@ -313,12 +313,12 @@ computed: {
         ]
     }
     ```
-2. 第二种用法: v-for 还支持一个可选的第二个参数，即当前项的索引
+2. 用法二:<br> v-for 还支持一个可选的第二个参数，即当前项的索引
     ``` {.js}
     <ul>
-    <li v-for="(item, index) in items">
-        {{ index }} {{ item.name }}
-    </li>
+        <li v-for="(item, index) in items">
+            {{ index }} {{ item.name }}
+        </li>
     </ul>
     ```
 
@@ -326,16 +326,13 @@ computed: {
 
 #### 指令v-for循环(对象)
 
-第一种用法:
-
-``` 
-v-for="item in items"
-// items 为对象  item为当前遍历属性对象的值
-```
-
-第二种用法:
-
-``` 
-v-for="(item, key, index) in  items"   
-//item为当前遍历属性对象的值  key为当前属性名 index为当前索引的值
-```
+1. 用法一:
+    ``` 
+    v-for="item in items"
+    // items 为对象  item为当前遍历属性对象的值
+    ```
+2. 用法二:
+    ``` 
+    v-for="(item, key, index) in  items"   
+    //item为当前遍历属性对象的值  key为当前属性名 index为当前索引的值
+    ```
