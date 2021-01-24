@@ -1,3 +1,8 @@
+# Vue的学习笔记
+
+参考学习网站：<br>
+[vue.js](https://cn.vuejs.org/v2/guide/index.html)
+[菜鸟教程](https://www.runoob.com/vue2/vue-tutorial.html)
 ## lesson-1初认识Vue.js和vue的引入
 引入方式:
 **1. 引入文件方式**
@@ -283,9 +288,11 @@ computed: {
 
 
 ## lesson-11:v-if和v-show
-**使用:** v-if 和 v-show 后面跟着表达式的值是布尔值，布尔值来决定该元素显示隐藏
+**使用:** 
+1. v-if 和 v-show 后面跟着表达式的值是布尔值，布尔值来决定该元素显示隐藏
+2. v-if常常和v-else-if一起使用
 
-**注意** : v-if 是直接决定元素的添加或者删除 而v-show只是根据样式来决定 显示隐藏
+**注意** :<br> v-if 是直接决定元素的添加或者删除,<br>而v-show只是根据样式来决定显示隐藏
 
 - `v-if`  有更高的切换开销
 - `v-show` 有更高的初始渲染开销。
@@ -298,7 +305,7 @@ computed: {
 #### 指令v-for循环(数组)
 
 - `v-for` 指令基于一个数组来渲染一个列表
-- `v-for` 语法 `item in items` 或者 `item of items` 
+- `v-for` 语法 ：`item in items` 或者 `item of items` 
 - 其中 items 是源数据数组 而 item 则是被迭代的数组元素的别名。
 
 1. 用法一：
@@ -326,16 +333,16 @@ computed: {
     </ul>
     ```
 
-**`注意`**： v-for写的位置 应该是重复的标签上 不是其父级元素上 需要注意
+**注意**： v-for写的位置 应该是重复的标签上 不是其父级元素上 需要注意
 
 #### 指令v-for循环(对象)
 
-1. 用法一:
+1. 用法一:遍历对象
     ``` 
     v-for="item in items"
     // items 为对象  item为当前遍历属性对象的值
     ```
-2. 用法二:
+2. 用法二:遍历对象属性的值
     ``` 
     v-for="(item, key, index) in  items"   
     //item为当前遍历属性对象的值  key为当前属性名 index为当前索引的值
