@@ -33,7 +33,7 @@ npm install vue
 ## lesson-2实例化vue对象
 在html中使用\<script src="xxx.js"> \</script>标签开引入js文件，并在js文件实例化vue对象
 
-#### 实例选项-el
+### 实例选项-el
  
 -   当前Vue实例所管理的html视图
 
@@ -50,7 +50,7 @@ new Vue({
 })
 ```
 
-#### 实例选项-data
+### 实例选项-data
 
 -   Vue 实例的data(数据对象)，是响应式数据(数据驱动视图)
 
@@ -73,7 +73,7 @@ console.log(vm.msg)
 console.log(vm.$data.msg)
 ```
 
-#### 实例选项-methods
+### 实例选项-methods
 
 -   methods其值为一个对象
 -   可以直接通过 VM 实例访问这些方法，或者在**指令表达式中使用**。
@@ -104,7 +104,7 @@ let vm =new Vue({
 })
 ```
 
-#### 插值表达式（也叫做模板语法）
+### 插值表达式（模板语法）
 
 **作用:** 会将绑定的数据实时的显示出来
 
@@ -145,7 +145,7 @@ let vm =new Vue({
 ```
 
 ## lesson-3事件绑定
-#### 指令v-bind绑定属性
+### 指令v-bind绑定属性
 **使用：**
 - 第一种：`v-bind:标签="方法名"`
 - 第二种：`：标签=”方法名`
@@ -154,7 +154,7 @@ let vm =new Vue({
 <a v-bind:href="xxx">some text</a>
 ```
 
-#### 指令v-on绑定事件
+### 指令v-on绑定事件
 
 **使用:**
 
@@ -185,7 +185,7 @@ v-on默认一定绑定了方法，所以调用方法可以不写括号（）
    - keyup：键盘按键被松开
    - keydown：键盘按键被按下
    - 例如keyup.alt.enter等表示输入按键被松开后还要按alt和enter才会触发绑定的方法
-##### lesson-6事件修饰符
+### lesson-6事件修饰符
 常用修饰符：
 - .stop:阻止单击事件冒泡
 - .prevent:提交事件不再重载页面
@@ -196,7 +196,7 @@ v-on默认一定绑定了方法，所以调用方法可以不写括号（）
 修饰符的使用：
 - 修饰符可以串联
 - 可以只有修饰符
-#### lesson-5指令v-html与v-text
+### lesson-5 v-html与v-text
 `v-text`将内容解析为字符串显示。
 `v-html`将内容解析为html格式后显示
 例如
@@ -302,7 +302,7 @@ computed: {
 
 
 ## lesson-12：v-for
-#### 指令v-for循环(数组)
+### 指令v-for循环(数组)
 
 - `v-for` 指令基于一个数组来渲染一个列表
 - `v-for` 语法 ：`item in items` 或者 `item of items` 
@@ -335,15 +335,57 @@ computed: {
 
 **注意**： v-for写的位置 应该是重复的标签上 不是其父级元素上 需要注意
 
-#### 指令v-for循环(对象)
+### 指令v-for循环(对象)
 
-1. 用法一:遍历对象
+1. 用法一: 遍历对象
     ``` 
     v-for="item in items"
-    // items 为对象  item为当前遍历属性对象的值
     ```
-2. 用法二:遍历对象属性的值
+    `items`为对象, `item`为当前遍历属性对象的值
+
+2. 用法二: 遍历对象属性的值
     ``` 
-    v-for="(item, key, index) in  items"   
-    //item为当前遍历属性对象的值  key为当前属性名 index为当前索引的值
-    ```
+    v-for="(item, key, index) in  items"
+     ```   
+    `item`为当前遍历属性对象的值`key`为当前属性名, `index`为当前索引的值
+   
+
+
+
+## lesson-15组件初步
+组件是可复用的 Vue 实例，且带有一个名字：在下面这个例子中是\<button-counter>。
+```
+// 定义一个名为 button-counter 的新组件
+Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
+```
+我们可以在一个通过`new Vue`创建的Vue根实例中，把这个组件作为自定义元素来使用：
+```{.html}
+// html
+<div id="components-demo">
+  <button-counter></button-counter>
+</div>
+```
+```{.js}
+// js
+new Vue({ el: '#components-demo' })
+```
+组件是可复用的 Vue 实例，所以它们与 `new Vue` 接收相同的选项，例如 `data、computed、watch、methods` 以及`生命周期钩子`等。仅有的例外是像 `el` 这样根实例特有的选项
+
+- 组件可以进行任意次数的复用
+- data必须是一个函数
+
+### 组件的注册
+- 组件必须先注册一边Vue能够识别。注册分为全局注册和局部注册
+
+1. 全局注册
+    使用`Vue.component`全局注册。<br>全局注册的组件可以用在其被注册之后的任何 (通过 `new Vue`) 新创建的 Vue 根实例，也包括其组件树中的所有子组件的模板中。
+2. 局部注册
+    <!-- TODO -->
+
