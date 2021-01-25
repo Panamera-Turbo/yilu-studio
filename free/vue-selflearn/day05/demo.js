@@ -1,4 +1,4 @@
-vm = new  Vue({
+var vm = new  Vue({
     el: "#app1",
     data: {
         health: 100,
