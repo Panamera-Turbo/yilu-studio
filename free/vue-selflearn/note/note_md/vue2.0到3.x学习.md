@@ -389,3 +389,21 @@ new Vue({ el: '#components-demo' })
 2. 局部注册
     <!-- TODO -->
 
+## 脚手架CLI
+- 通过webpack搭建的开发环境
+- 使用ES6语法
+- 打包和压缩js为一个文件
+- 项目文件在环境中编译而非浏览器
+- 页面自动刷新
+
+### 搭建脚手架
+看我写的[CSDN博客]()
+
+### 利用脚手架创建项目
+完成安装后进行下面的行为
+1. 进入想要创建项目的路径
+2. `vue init webpack vue-playlist`<br>(vue-playlist是项目名称)
+3. 根据提示依次填写项目名（默认为vue-playlist）、描述、作者，选择要安装的包和依赖等（选择方式为上下箭头选择或Y/n）。通常，较为简单的项目我们可以不安装vue-router、ESlint、Karma+Mocha、e2e
+4. 进入vue-playlist（项目名称对应的文件夹）
+5. `npm install`安装依赖模块
+6. `npm run dev`
