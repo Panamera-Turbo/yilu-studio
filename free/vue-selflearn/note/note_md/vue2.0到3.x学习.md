@@ -470,5 +470,11 @@ new Vue({ el: '#components-demo' })
 ## lesson-18组件嵌套
 - App.vue是根组件。位于components文件夹里的是子组件。通常命名可以大写首字母。例如HelloWorld.vue
 - 组件使用前必须要先注册。注册分为全局注册和局部注册
-  1. 全局注册：`Vue.component("ComponentTagName", ComponentName)`<br>在main.js中使用上述方法进行注册。使用`import ComponentName from '路径'`来引入
-  2. 
+  1. 全局注册：<br>`Vue.component("ComponentTagName", ComponentName)`<br>在main.js中使用上述方法进行注册。使用`import ComponentName from '路径'`来引入
+  
+  2. 局部注册：<br>在局部组件（例如在App.vue中）使用`Vue.component("ComponentTagName", ComponentName)`和`import ComponentName from '路径'`，同时在该.vue文件中`<script>`标签里的`export default`中添加`components:{"ComponentTagName" : ComponentName}`("ComponentTagName" :可以省略)
+  
+  3. 实际中很少使用全局注册，主要是局部注册
+
+
+## css的作用域

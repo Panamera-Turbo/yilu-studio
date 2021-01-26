@@ -12,7 +12,9 @@ import Users from './components/Users.vue'
 // import HelloWorld from './components/HelloWorld'
 
 export default {
-  components: { Users },
+  components: { 
+    "users" : Users 
+  },
   name: 'App',
   data(){
     return{
