@@ -349,7 +349,8 @@ computed: {
      ```   
     `item`为当前遍历属性对象的值`key`为当前属性名, `index`为当前索引的值
    
-
+### 注意
+在vue 2.2.0以上的版本中，组件使用v-for时key时必须的
 
 
 ## lesson-15组件初步
@@ -406,4 +407,68 @@ new Vue({ el: '#components-demo' })
 3. 根据提示依次填写项目名（默认为vue-playlist）、描述、作者，选择要安装的包和依赖等（选择方式为上下箭头选择或Y/n）。通常，较为简单的项目我们可以不安装vue-router、ESlint、Karma+Mocha、e2e
 4. 进入vue-playlist（项目名称对应的文件夹）
 5. `npm install`安装依赖模块
-6. `npm run dev`
+6. `npm run dev`:<br>serve with hot reload at localhost:8080
+7. `npm run build`:<br>build for production with minification
+8. `npm run build --report`:<br>build for production and view the bundle analyzer report
+
+
+### 搭建后的内容介绍
+理解顺序：index.html -> main.js -> App.vue
+
+- 默认文件夹名称和项目名称一样
+- build文件夹构建客户端和服务端，可以构建端口号等
+- config是配置文件
+- src
+- static：静态文件文件夹
+- index.html是入口文件
+- package.json防止依赖文件、依赖包等
+- README里可以查阅一些命令等
+
+<br>
+
+./src/App.vue是一个组件。内容介绍：
+1. html结构:template标签
+    ```
+    <template>
+    <div id="app">
+        <img src="./assets/logo.png">
+        <HelloWorld/>
+    </div>
+    </template>
+    ```
+    - 有且仅有一个根标签、
+  
+
+2. 行为（处理逻辑）：script标签
+    ```
+    <script>
+    import HelloWorld from './components/HelloWorld'
+
+    export default {
+    name: 'App',
+    components: {
+        HelloWorld
+    }}
+    </script>
+    ```
+
+3. 样式（解决样式）：style标签
+    ```
+    <style>
+    #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+    }
+    </style>
+    ```
+
+
+## lesson-18组件嵌套
+- App.vue是根组件。位于components文件夹里的是子组件。通常命名可以大写首字母。例如HelloWorld.vue
+- 组件使用前必须要先注册。注册分为全局注册和局部注册
+  1. 全局注册：`Vue.component("ComponentTagName", ComponentName)`<br>在main.js中使用上述方法进行注册。使用`import ComponentName from '路径'`来引入
+  2. 
