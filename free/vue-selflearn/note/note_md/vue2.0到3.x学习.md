@@ -477,7 +477,38 @@ new Vue({ el: '#components-demo' })
   3. 实际中很少使用全局注册，主要是局部注册
 
 
-## 组件中css的作用域
+## lesson-19组件中css的作用域
 - 作用域：使用< style scoped >标签来限制作用域，确保只会作用在对应的组件范围上
   - 原理：<br>添加scoped后，标签和css之间会产生对应的关系。（可以理解为标签、组件各自打上了对应的编号）
 
+## lesson-21 属性传值
+props
+假设A.vue希望能够使用B.vue中的属性X的值X_data和属性Y的值Y_data，那么A中可以进行如下操作：
+1. 方法1:这时官方提供，也是最好的方式
+    ```
+    //在script标签的default中添加：
+    props:{
+        X:{
+            type:X_type,        //X的类型，例如Array，String等
+            required:true,
+        },
+        Y:{
+            type:Y_Type,
+            required:true,
+        }
+    }
+    ```
+2. 方法2.当只有一个属性时，也可以用下面这个不太严谨的办法
+    ```
+    //在script标签的default中添加：
+    props:["X"],
+
+    //在调用A的标签的地方
+    <A v-binb:X_in_A = "X">
+    ``` 
+
+
+## lesson-22传值和传引用
+类比C传值和传地址
+
+## lesson-23事件传值
