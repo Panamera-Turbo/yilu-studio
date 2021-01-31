@@ -482,7 +482,6 @@ new Vue({ el: '#components-demo' })
   - 原理：<br>添加scoped后，标签和css之间会产生对应的关系。（可以理解为标签、组件各自打上了对应的编号）
 
 ## lesson-21 属性传值
-props
 假设A.vue希望能够使用B.vue中的属性X的值X_data和属性Y的值Y_data，那么A中可以进行如下操作：
 1. 方法1:这时官方提供，也是最好的方式
     ```
@@ -511,4 +510,21 @@ props
 ## lesson-22传值和传引用
 类比C传值和传地址
 
-## lesson-23事件传值
+## lesson-23事件传值(子传父)
+```
+//child
+this.$emit('add',good)
+
+//parent
+<Helloworld @add="add($event)"/>
+```
+
+**$emit** :
+- `vm.$emit( event, arg )`
+- 绑定一个自定义事件event，当这个这个语句被执行到的时候，就会将参数arg传递给父组件，父组件通过v-on:event监听并接收参数
+
+
+**使用** ：
+- 子组件使用props
+- 子组件的methods中，方法A中使用`$emit`中注册
+- 父组件使用子组件标签的地方使用v-on（或@）来绑定刚才注册的事件，事件对应的方法使用`($event)`接受参数args

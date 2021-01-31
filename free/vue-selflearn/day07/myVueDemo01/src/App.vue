@@ -2,9 +2,9 @@
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
     <!-- <HelloWorld/> -->
-    <app-header></app-header>
+    <app-header v-bind:title="title" v-on:titleChaged="updateTitle($event)"></app-header>
     <users></users>
-    <app-footer></app-footer>
+    <app-footer v-bind:title="title"></app-footer>
   </div>
 </template>
 
@@ -16,9 +16,16 @@ import Users from './components/Users'
 
 export default {
   name: 'App',
+  
   data(){
     return {
       title:"This is my first vue doemo!"
+    }
+  },
+
+  methods:{
+    updateTitle(title){
+      this.title = title;
     }
   },
   components: {
