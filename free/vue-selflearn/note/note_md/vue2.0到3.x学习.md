@@ -503,7 +503,7 @@ new Vue({ el: '#components-demo' })
     props:["X"],
 
     //在调用A的标签的地方
-    <A v-binb:X_in_A = "X">
+    <A v-bind:X_in_A = "X">
     ``` 
 
 
@@ -528,3 +528,81 @@ this.$emit('add',good)
 - 子组件使用props
 - 子组件的methods中，方法A中使用`$emit`中注册
 - 父组件使用子组件标签的地方使用v-on（或@）来绑定刚才注册的事件，事件对应的方法使用`($event)`接受参数args
+
+
+## lesson-24生命周期钩子
+常用的生命周期钩子：
+- beforeCreate
+- created
+- beforeMount
+- mounted
+- beforeUpdate
+- updated
+- beforeDestroy
+- destroyed
+
+生命周期图示：
+![生命周期](https://cn.vuejs.org/images/lifecycle.png)
+一些说明：
+- 在“has ‘el’ option”，如果既没有el也没有在该实例后使用`.$mount(elName)`，开始检查template
+- 在“has ‘template’ option”，如果template里既没有具体的组件名也没有某个标签等，则生命周期结束
+- mounted 在页面加载完成的时候就会被渲染出来
+- 更改出现在updated
+
+例如：
+```
+created:function(){
+    alert("组件实例化完毕，但页面仍未显示")
+}
+```
+
+## lesson-25 路由
+1. 在项目文件夹中下载路由模块vue-router：`npm install vue-router --save-dev`（或者创建项目时在脚手架搭建时就选择下载vue-router）
+2. 在main.js中引入路由模块：`import VueRouter from 'vue-router`
+3. 在main.js中注明将要使用路由：`Vue.use(VueRouter)
+4. 配置路由：
+   ```
+    const router = new VueRouter({
+        routes:[
+            { path: "/", component:xxx(组件名)}
+            { path: "/helloworld", component:xxx(组件名)}
+
+        ]
+    })
+   ``` 
+   - 利用{}传递对象
+   - routes位固定成员。其中，path代表路由的地址，component在路由成功后调用相应组件。
+   - 允许有多个path和对应的component。
+   - component调用的组件都要先在main.js中引入
+5. main.js实例化的Vue对象中使用router
+   ```
+   new Vue({
+    router,
+    el: '#app',
+    components: { App },
+    template: '<App/>'
+   })
+   ```
+6. 做到这里以后，使用npm run dev在localhost:8080/#/ 运行。如果地址栏输入localhost:8080/#/helloworld，将跳转到helloworld组件对用的页面
+
+7. 为了实现自己定义路由，点击后跳转，进入main.js，在const router中添加`mode: "history"`属性(注意mode和routes没有包含关系)
+   ```
+    const router = new VueRouter({
+        routes:[
+            {path:"/", component:Home},
+            {path:"/helloworld", component:HelloWorld}
+        ],
+
+        mode: "history",
+    })
+    ```
+    自定义跳转若使用`a标签`，其中`href`的值为对应的路由名。但a标签每次点击都会重新加载，效率低下，因此不用；<br>使用标签`<router-link to="路由地址">显示内容</router-link>`
+
+## lesson-25 请求  ---这里有问题，无法实现。可能是教程没有更新
+*这里只介绍vue内置进行http请求的部分`vue-resource`*
+
+1. npm install vue-resource --save-dev
+2. 在main.js中引入：`import VueResource from 'vue-resource'`
+3. 使用VueResource：`Vue.use(VueResource)`
+4. 在希望调用的组件中使用恰当的钩子函数请求http的数据。例如：
+    ```
