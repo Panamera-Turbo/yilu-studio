@@ -530,7 +530,7 @@ this.$emit('add',good)
 - 父组件使用子组件标签的地方使用v-on（或@）来绑定刚才注册的事件，事件对应的方法使用`($event)`接受参数args
 
 
-## lesson-24生命周期钩子
+## lesson-24生命周期
 常用的生命周期钩子：
 - beforeCreate
 - created
