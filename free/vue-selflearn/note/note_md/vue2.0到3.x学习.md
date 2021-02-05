@@ -604,5 +604,8 @@ created:function(){
 1. npm install vue-resource --save-dev
 2. 在main.js中引入：`import VueResource from 'vue-resource'`
 3. 使用VueResource：`Vue.use(VueResource)`
-4. 在希望调用的组件中使用恰当的钩子函数请求http的数据。例如：
-    ```
+4. 在希望调用的组件中请求http
+
+![Vue Resource 公开方法](https://images2017.cnblogs.com/blog/1186521/201712/1186521-20171211115059165-807946220.png)
+
+![vue.http.headers](https://images2017.cnblogs.com/blog/1186521/201712/1186521-20171211115153602-1548396736.png)

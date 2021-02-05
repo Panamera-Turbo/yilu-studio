@@ -1,13 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <!-- <img src="./assets/logo.png"> -->
     <router-view/>
+    <add-blog></add-blog>
   </div>
 </template>
 
 <script>
+import AddBlog from './components/AddBlog.vue'
+
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    AddBlog
+  }
 }
 </script>
 
