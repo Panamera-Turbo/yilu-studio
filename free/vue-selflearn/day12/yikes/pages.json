@@ -3,7 +3,8 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				// "navigationBarTitleText": "uni-app",
+				"navigationStyle":"custom"//这两行用来关闭默认的头部“uni-app”
 			}
 		}
 	],
