@@ -13,6 +13,21 @@
 				<image class="search" src="../../static/index/search.png"></image>
 			</view>
 		</view>
+		<view class="apply"></view>
+		<view class="freinds">
+			<view class="freind-list-l">
+				<text class="tip">1</text>
+				<image src="../../static/users/2.jpeg"></image>
+			</view>
+			<view class="freind-list-r">
+				<view class="top">
+					<view class="name">都知道</view>
+					<view class="time">14:33</view>
+				</view>
+				<view class="content">[content; substance] 事物嗦包含的实质性事物</view>
+			</view>
+		</view>
+		
 	</view>
 </template>
 
