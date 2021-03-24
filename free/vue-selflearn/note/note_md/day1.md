@@ -16,13 +16,13 @@
 Vue基础
 -------
 
-**文档:**
+#### 文档:
 
 -   [Vue官方文档](https://cn.vuejs.org/)
 -   [Vue开源项目汇总](https://github.com/opendigg/awesome-github-vue)
 -   [Vue.js中文社区](https://www.vue-js.com/)
 
-**引入方式:**
+#### 引入方式:
 
 **1. 引入文件方式**
 
@@ -45,8 +45,7 @@ npm install vue
 **`注意:`** `Vue.js 不支持 IE8 及其以下版本`
 
 **2. 脚手架的方式**
-
-​ ....适合生产环境
+- 适合生产环境
 
 #### 实例选项-el
  
@@ -170,11 +169,11 @@ let vm =new Vue({
 
 -   `v-if`  有更高的切换开销
 -   `v-show` 有更高的初始渲染开销。
+```
+ 如果需要非常频繁地切换，则使用 `v-show` 较好.
 
-> 如果需要非常频繁地切换，则使用 `v-show` 较好.
->
-> 如果在运行时条件很少改变，则使用 `v-if` 较好.
-
+ 如果在运行时条件很少改变，则使用 `v-if` 较好.
+```
 #### 指令v-on绑定事件
 
 **使用:**
@@ -305,8 +304,7 @@ computed: {
 
 #### 生命周期
 
-> Vue
-> 实例从开始创建、初始化数据、编译模板、挂载Dom和渲染、更新和渲染、卸载等一系列过程，这是Vue 的生命周期
+`Vue实例`从开始创建、初始化数据、编译模板、挂载Dom和渲染、更新和渲染、卸载等一系列过程，这是Vue 的生命周期<br>
 
 Vue的生命周期里边有八个生命周期钩子函数分别是:
 
@@ -326,7 +324,7 @@ Vue的生命周期里边有八个生命周期钩子函数分别是:
 
 -   destroyed（）销毁
 
-<img src="https://tva1.sinaimg.cn/large/0081Kckwly1gknncqwp6kj30u023z7bm.jpg" style="zoom:25%;">
+![pic](https://tva1.sinaimg.cn/large/0081Kckwly1gknncqwp6kj30u023z7bm.jpg)
 
 **mounted:**
 
