@@ -1,9 +1,13 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
+		<!-- <image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
-		</view>
+		</view> -->
+		<uni-list>
+			<uni-list-item title="" note=""></uni-list-item>
+			<uni-list-item title="" note=""></uni-list-item>
+		</uni-list>
 	</view>
 </template>
 
@@ -11,11 +15,22 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				// title: 'Hello'
+				
 			}
 		},
-		onLoad() {
-
+		onLoad:function(){
+			uni.request({
+				url: 'https://unidemo.dcloud.net.cn/api/news',
+				method: 'GET',
+				data: {},
+				success: res => {
+					console.log(res);
+					this.news = res.data;
+				},
+				fail: () => {},
+				complete: () => {}
+			});
 		},
 		methods: {
 
@@ -24,7 +39,7 @@
 </script>
 
 <style>
-	.content {
+	/* .content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -48,5 +63,5 @@
 	.title {
 		font-size: 36rpx;
 		color: #8f8f94;
-	}
+	} */
 </style>

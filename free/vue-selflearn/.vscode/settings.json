@@ -5,6 +5,7 @@
         "keydown",
         "keyup",
         "mousemove",
+        "propertyname",
         "tiedan",
         "yuonly"
     ]

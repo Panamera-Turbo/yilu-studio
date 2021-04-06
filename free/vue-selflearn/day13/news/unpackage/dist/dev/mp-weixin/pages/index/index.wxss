@@ -1,19 +1,51 @@
 
-.content {
-	display: -webkit-box;
-	display: -webkit-flex;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .content {
 	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	        flex-direction: column;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	        justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
+
 .logo {
 	height: 200rpx;
 	width: 200rpx;
@@ -22,16 +54,14 @@
 	margin-right: auto;
 	margin-bottom: 50rpx;
 }
+
 .text-area {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	        justify-content: center;
+	justify-content: center;
 }
+
 .title {
 	font-size: 36rpx;
 	color: #8f8f94;
-}
+} */
 

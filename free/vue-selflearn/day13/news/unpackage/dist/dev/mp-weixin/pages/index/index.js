@@ -135,7 +135,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
 //
 //
 //
@@ -148,13 +152,25 @@ var _default =
 {
   data: function data() {
     return {
-      title: 'Hello' };
+      // title: 'Hello'
+    };
 
   },
-  onLoad: function onLoad() {
+  onLoad: function onLoad() {var _this = this;
+    uni.request({
+      url: 'https://unidemo.dcloud.net.cn/api/news',
+      method: 'GET',
+      data: {},
+      success: function success(res) {
+        console.log(res);
+        _this.news = res.data;
+      },
+      fail: function fail() {},
+      complete: function complete() {} });
 
   },
   methods: {} };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 /* 17 */

@@ -14,4 +14,9 @@
 
 <style>
 	/*每个页面公共css */
+	@import "./common/uni.css";
+	page,
+	view{
+		display: flex;
+	}
 </style>
