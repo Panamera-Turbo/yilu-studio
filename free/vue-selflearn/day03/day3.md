@@ -55,10 +55,9 @@
 4. Proxy不仅可以代理对象，还可以代理数组、代理动态增加的属性。 
 5. Proxy 的兼容性不如Object.defineProperty，但是可以使用 polyfill 来处理兼容性
 
-##面试题
+## 面试题
 
 1. Vue中循环为什么要加key，有什么好处
-
 2. Vue中如何监听数组变化
 3. Vue中为什么需要虚拟DOM
 4. Vue中的diff原理
