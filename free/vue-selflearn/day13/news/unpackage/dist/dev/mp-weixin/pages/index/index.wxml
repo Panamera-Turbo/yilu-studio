@@ -1,1 +1,0 @@
-<view class="content"><uni-list vue-id="8dd740cc-1" bind:__l="__l" vue-slots="{{['default']}}"><uni-list-item vue-id="{{('8dd740cc-2')+','+('8dd740cc-1')}}" title note bind:__l="__l"></uni-list-item><uni-list-item vue-id="{{('8dd740cc-3')+','+('8dd740cc-1')}}" title note bind:__l="__l"></uni-list-item></uni-list></view>
